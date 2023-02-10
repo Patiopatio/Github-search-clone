@@ -21,10 +21,10 @@ const Container = styled("div")({
   //   width: "100vw",
   height: "100vh",
   backgroundColor: "#FFFFFF",
-  [mediaQuery[0]]: {
-    minWidth: "320px",
-    backgroundColor: "red",
-  },
+  // [mediaQuery[0]]: {
+  //   width: "100%",
+  //   backgroundColor: "red",
+  // },
   [mediaQuery[1]]: {
     width: "587px",
     // backgroundColor: "blue",
@@ -47,6 +47,8 @@ const Wrapper = styled("div")({
 const Footer = styled(Paper)({});
 
 const Layout = ({ children }: { children: ReactNode }) => {
+  const redirectToFavourite = () => {};
+
   return (
     <>
       <GlobalStyles
@@ -57,6 +59,14 @@ const Layout = ({ children }: { children: ReactNode }) => {
             height: "100vh",
             display: "flex",
             justifyContent: "center",
+          },
+          "#root": {
+            display: "flex",
+            justifyContent: "center",
+            [mediaQuery[0]]: {
+              width: "100vw",
+              backgroundColor: "pink",
+            },
           },
         }}
       />
@@ -72,7 +82,12 @@ const Layout = ({ children }: { children: ReactNode }) => {
             // }}
           >
             <BottomNavigationAction label="SearchIcon" icon={<SearchIcon />} />
-            <BottomNavigationAction label="Favorites" icon={<FavoriteIcon />} />
+            <a href="favourites">
+              <BottomNavigationAction
+                label="Favorites"
+                icon={<FavoriteIcon />}
+              />
+            </a>
           </BottomNavigation>
         </Footer>
       </Container>

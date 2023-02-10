@@ -16,7 +16,7 @@ const HeaderWrapper = styled("div")({
   justifyContent: "space-between",
   alignContent: "top",
   padding: "16px",
-  height: "85px",
+  minHeight: "85px",
   backgroundColor: "#FFFFFF",
 });
 
